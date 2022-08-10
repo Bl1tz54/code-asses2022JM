@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+using System.Threading.Tasks;
+
+namespace code_asses2022JM
+{
+    class Enemy
+    {
+        // declare fields to use in the class
+        public int x, y, width, height;//variables for the rectangle
+        public Image alienImage;//variable for the planet's image
+
+        public Rectangle alienRec;//variable for a rectangle to place our image in
+        public int score;
+        //Create a constructor (initialises the values of the fields)
+        public Enemy(int spacing)
+        {
+            x = spacing;
+            y = 10;
+            width = 20;
+            height = 20;
+            //planetImage contains the plane1.png image
+            alienImage = Properties.Resources.alien;
+            alienRec = new Rectangle(x, y, width, height);
+        }
+
+
+
+        // Methods for the Planet class
+        public void DrawEnemy(Graphics g)
+        {
+            alienRec = new Rectangle(x, y, width, height);
+            g.DrawImage(alienImage, alienRec);
+        }
+
+    }
+}
