@@ -38,8 +38,7 @@ namespace code_asses2022JM
 
         public void MoveEnemy()
         {
-            y += 5;
-
+          
             alienRec.Location = new Point(x, y);
         }
 
