@@ -36,5 +36,13 @@ namespace code_asses2022JM
             g.DrawImage(alienImage, alienRec);
         }
 
+        public void MoveEnemy()
+        {
+            y += 5;
+
+            alienRec.Location = new Point(x, y);
+        }
+
+
     }
 }

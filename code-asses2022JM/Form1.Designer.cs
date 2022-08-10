@@ -40,7 +40,7 @@ namespace code_asses2022JM
             this.LblScore = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.LblLives = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TmrAlien = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
@@ -131,6 +131,11 @@ namespace code_asses2022JM
             this.LblLives.Size = new System.Drawing.Size(39, 20);
             this.LblLives.TabIndex = 9;
             // 
+            // TmrAlien
+            // 
+            this.TmrAlien.Enabled = true;
+            this.TmrAlien.Tick += new System.EventHandler(this.TmrAlien_Tick);
+            // 
             // FrmAlien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +170,7 @@ namespace code_asses2022JM
         private System.Windows.Forms.TextBox LblScore;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox LblLives;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer TmrAlien;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
     }

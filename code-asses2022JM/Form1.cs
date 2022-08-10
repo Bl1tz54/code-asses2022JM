@@ -39,5 +39,21 @@ namespace code_asses2022JM
             }
 
         }
+
+        private void TmrAlien_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                alien1[i].MoveEnemy();
+
+                //if a planet reaches the bottom of the Game Area reposition it at the top
+                if (alien1[i].y >= PnlGame.Height)
+                {
+                    alien1[i].y = 10;
+                }
+
+            }
+            PnlGame.Invalidate();//makes the paint event fire to redraw the panel
+        }
     }
 }
