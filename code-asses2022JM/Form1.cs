@@ -15,6 +15,7 @@ namespace code_asses2022JM
         Graphics g; //declare a graphics object called g
         Enemy[] alien1 = new Enemy[7]; //create the object, planet1
         Random yspeed = new Random();
+        Player player = new Player();
 
         public FrmAlien()
         {
@@ -32,6 +33,7 @@ namespace code_asses2022JM
         {
             //get the graphics used to paint on the panel control
             g = e.Graphics;
+            player.DrawPlayer(g);
 
             for (int i = 0; i < 7; i++)
             {
@@ -41,6 +43,7 @@ namespace code_asses2022JM
 
                 //call the Planet class's drawPlanet method to draw the images
                 alien1[i].DrawEnemy(g);
+
             }
 
         }

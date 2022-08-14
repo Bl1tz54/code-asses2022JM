@@ -59,15 +59,15 @@ namespace code_asses2022JM
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.Gray;
-            this.PnlGame.Location = new System.Drawing.Point(7, 137);
+            this.PnlGame.Location = new System.Drawing.Point(15, 131);
             this.PnlGame.Name = "PnlGame";
-            this.PnlGame.Size = new System.Drawing.Size(562, 356);
+            this.PnlGame.Size = new System.Drawing.Size(500, 400);
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
             // MnuStart
             // 
-            this.MnuStart.Location = new System.Drawing.Point(597, 137);
+            this.MnuStart.Location = new System.Drawing.Point(598, 131);
             this.MnuStart.Name = "MnuStart";
             this.MnuStart.Size = new System.Drawing.Size(75, 23);
             this.MnuStart.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace code_asses2022JM
             // 
             // MnuStop
             // 
-            this.MnuStop.Location = new System.Drawing.Point(597, 178);
+            this.MnuStop.Location = new System.Drawing.Point(598, 192);
             this.MnuStop.Name = "MnuStop";
             this.MnuStop.Size = new System.Drawing.Size(75, 23);
             this.MnuStop.TabIndex = 3;
@@ -140,7 +140,7 @@ namespace code_asses2022JM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 523);
+            this.ClientSize = new System.Drawing.Size(685, 561);
             this.Controls.Add(this.LblLives);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.LblScore);
