@@ -73,6 +73,7 @@ namespace code_asses2022JM
             this.MnuStart.TabIndex = 2;
             this.MnuStart.Text = "Start ";
             this.MnuStart.UseVisualStyleBackColor = true;
+            this.MnuStart.Click += new System.EventHandler(this.MnuStart_Click);
             // 
             // MnuStop
             // 
@@ -82,6 +83,7 @@ namespace code_asses2022JM
             this.MnuStop.TabIndex = 3;
             this.MnuStop.Text = "Stop";
             this.MnuStop.UseVisualStyleBackColor = true;
+            this.MnuStop.Click += new System.EventHandler(this.MnuStop_Click);
             // 
             // label2
             // 
@@ -119,12 +121,10 @@ namespace code_asses2022JM
             // 
             // TmrAlien
             // 
-            this.TmrAlien.Enabled = true;
             this.TmrAlien.Tick += new System.EventHandler(this.TmrAlien_Tick);
             // 
             // TmrPlayer
             // 
-            this.TmrPlayer.Enabled = true;
             this.TmrPlayer.Interval = 50;
             this.TmrPlayer.Tick += new System.EventHandler(this.TmrPlayer_Tick);
             // 

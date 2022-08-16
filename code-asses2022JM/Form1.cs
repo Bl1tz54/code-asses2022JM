@@ -84,6 +84,23 @@ namespace code_asses2022JM
             lives = int.Parse(LblLives.Text);
         }
 
+        private void MnuStart_Click(object sender, EventArgs e)
+        {
+            score = 0;
+            LblScore.Text = score.ToString();
+            // pass lives from LblLives Text property to lives variable
+            lives = int.Parse(LblLives.Text);
+
+            TmrAlien.Enabled = true;
+            TmrPlayer.Enabled = true;
+        }
+
+        private void MnuStop_Click(object sender, EventArgs e)
+        {
+            TmrPlayer.Enabled = false;
+            TmrAlien.Enabled = false;
+        }
+
         private void TmrAlien_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 7; i++)
