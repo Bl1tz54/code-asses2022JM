@@ -32,5 +32,45 @@ namespace code_asses2022JM
             g.DrawImage(player, playerRec);
         }
 
+        public void MovePlayer(string move)
+        {
+            playerRec.Location = new Point(x, y);
+
+            if (move == "right")
+            {
+                if (playerRec.Location.X > 450) // is spaceship within 50 of right side
+                {
+
+                    x = 450;
+                    playerRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    x += 5;
+                    playerRec.Location = new Point(x, y);
+                }
+
+            }
+
+
+            if (move == "left")
+            {
+                if (playerRec.Location.X < 10) // is spaceship within 10 of left side
+                {
+
+                    x = 10;
+                    playerRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    x -= 5;
+                    playerRec.Location = new Point(x, y);
+                }
+
+            }
+
+        }
+
+
     }
 }

@@ -37,12 +37,12 @@ namespace code_asses2022JM
             this.label2 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.LblScore = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.LblLives = new System.Windows.Forms.TextBox();
             this.TmrAlien = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.TmrPlayer = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.LblLives = new System.Windows.Forms.Label();
+            this.LblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,7 +97,7 @@ namespace code_asses2022JM
             this.TxtName.Location = new System.Drawing.Point(53, 104);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(100, 20);
-            this.TxtName.TabIndex = 5;
+            this.TxtName.TabIndex = 1;
             // 
             // label3
             // 
@@ -108,13 +108,6 @@ namespace code_asses2022JM
             this.label3.TabIndex = 6;
             this.label3.Text = "Score";
             // 
-            // LblScore
-            // 
-            this.LblScore.Location = new System.Drawing.Point(239, 104);
-            this.LblScore.Name = "LblScore";
-            this.LblScore.Size = new System.Drawing.Size(39, 20);
-            this.LblScore.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -124,26 +117,43 @@ namespace code_asses2022JM
             this.label4.TabIndex = 8;
             this.label4.Text = "Lives";
             // 
-            // LblLives
-            // 
-            this.LblLives.Location = new System.Drawing.Point(351, 104);
-            this.LblLives.Name = "LblLives";
-            this.LblLives.Size = new System.Drawing.Size(39, 20);
-            this.LblLives.TabIndex = 9;
-            // 
             // TmrAlien
             // 
             this.TmrAlien.Enabled = true;
             this.TmrAlien.Tick += new System.EventHandler(this.TmrAlien_Tick);
+            // 
+            // TmrPlayer
+            // 
+            this.TmrPlayer.Enabled = true;
+            this.TmrPlayer.Interval = 50;
+            this.TmrPlayer.Tick += new System.EventHandler(this.TmrPlayer_Tick);
+            // 
+            // LblLives
+            // 
+            this.LblLives.AutoSize = true;
+            this.LblLives.Location = new System.Drawing.Point(351, 107);
+            this.LblLives.Name = "LblLives";
+            this.LblLives.Size = new System.Drawing.Size(13, 13);
+            this.LblLives.TabIndex = 3;
+            this.LblLives.Text = "5";
+            // 
+            // LblScore
+            // 
+            this.LblScore.AutoSize = true;
+            this.LblScore.Location = new System.Drawing.Point(239, 107);
+            this.LblScore.Name = "LblScore";
+            this.LblScore.Size = new System.Drawing.Size(13, 13);
+            this.LblScore.TabIndex = 10;
+            this.LblScore.Text = "0";
             // 
             // FrmAlien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 561);
+            this.Controls.Add(this.LblScore);
             this.Controls.Add(this.LblLives);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.LblScore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label2);
@@ -151,8 +161,12 @@ namespace code_asses2022JM
             this.Controls.Add(this.MnuStart);
             this.Controls.Add(this.PnlGame);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "FrmAlien";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmAlien_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmAlien_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmAlien_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,12 +181,12 @@ namespace code_asses2022JM
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox LblScore;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox LblLives;
         private System.Windows.Forms.Timer TmrAlien;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer TmrPlayer;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label LblLives;
+        private System.Windows.Forms.Label LblScore;
     }
 }
 
