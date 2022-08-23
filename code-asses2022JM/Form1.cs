@@ -19,6 +19,9 @@ namespace code_asses2022JM
         bool left, right;
         string move;
         int score, lives;
+        //declare a list  missiles from the Missile class
+        List<Missile> missiles = new List<Missile>();
+        List<Enemy> alien = new List<Enemy>();
 
         public FrmAlien()
         {
@@ -38,6 +41,14 @@ namespace code_asses2022JM
             g = e.Graphics;
             player.DrawPlayer(g);
 
+
+            foreach (Missile m in missiles)
+            {
+                m.draw(g);
+            }
+
+
+
             for (int i = 0; i < 7; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
@@ -55,12 +66,17 @@ namespace code_asses2022JM
         {
             if (e.KeyData == Keys.Left) { left = true; }
             if (e.KeyData == Keys.Right) { right = true; }
+            if (e.KeyData == Keys.Space)
+            {
+                missiles.Add(new Missile(player.playerRec));
+            }
         }
 
         private void FrmAlien_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Left) { left = false; }
             if (e.KeyData == Keys.Right) { right = false; }
+
         }
 
         private void TmrPlayer_Tick(object sender, EventArgs e)
@@ -100,6 +116,26 @@ namespace code_asses2022JM
         {
             TmrPlayer.Enabled = false;
             TmrAlien.Enabled = false;
+        }
+
+        private void tmrshoot_Tick(object sender, EventArgs e)
+        {
+            foreach (Enemy p in alien)
+            {
+
+                foreach (Missile m in missiles)
+                {
+                    if (p.alienRec.IntersectsWith(m.missileRec))
+                    {
+
+                        missiles.Remove(m);
+                        break;
+                    }
+                }
+
+            }
+            this.Invalidate();
+
         }
 
         private void TmrAlien_Tick(object sender, EventArgs e)

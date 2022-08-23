@@ -19,8 +19,8 @@ namespace code_asses2022JM
         //Create a constructor (initialises the values of the fields)
         public Player()
         {
-            x = 250;
-            y = 360;
+            x = 10;
+            y = 350;
             width = 40;
             height = 40;
             player = Properties.Resources.rocket;

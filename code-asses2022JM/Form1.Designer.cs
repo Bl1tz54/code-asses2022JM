@@ -40,7 +40,7 @@ namespace code_asses2022JM
             this.label4 = new System.Windows.Forms.Label();
             this.TmrAlien = new System.Windows.Forms.Timer(this.components);
             this.TmrPlayer = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.tmrshoot = new System.Windows.Forms.Timer(this.components);
             this.LblLives = new System.Windows.Forms.Label();
             this.LblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -128,6 +128,11 @@ namespace code_asses2022JM
             this.TmrPlayer.Interval = 50;
             this.TmrPlayer.Tick += new System.EventHandler(this.TmrPlayer_Tick);
             // 
+            // tmrshoot
+            // 
+            this.tmrshoot.Enabled = true;
+            this.tmrshoot.Tick += new System.EventHandler(this.tmrshoot_Tick);
+            // 
             // LblLives
             // 
             this.LblLives.AutoSize = true;
@@ -184,7 +189,7 @@ namespace code_asses2022JM
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer TmrAlien;
         private System.Windows.Forms.Timer TmrPlayer;
-        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer tmrshoot;
         private System.Windows.Forms.Label LblLives;
         private System.Windows.Forms.Label LblScore;
     }
