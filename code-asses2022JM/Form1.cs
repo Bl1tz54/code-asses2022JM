@@ -11,9 +11,8 @@ using System.Windows.Forms;
 namespace code_asses2022JM
 {
     public partial class FrmAlien : Form
-    {
+    { 
         Graphics g; //declare a graphics object called g
-        Enemy[] alien1 = new Enemy[7]; //create the object, planet1
         Random yspeed = new Random();
         Player player = new Player();
         bool left, right;
@@ -29,9 +28,10 @@ namespace code_asses2022JM
 
             for (int i = 0; i < 7; i++)
             {
-                int x = 10 + (i * 75);
-                alien1[i] = new Enemy(x);
+                int displacement = 10 + (i * 70);
+                alien.Add(new Enemy(displacement));
             }
+
 
         }
 
@@ -49,18 +49,25 @@ namespace code_asses2022JM
 
 
 
+
+
+
+
+
+
             for (int i = 0; i < 7; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 20);
-                alien1[i].y += rndmspeed;
+                alien[i].y += rndmspeed;
 
                 //call the Planet class's drawPlanet method to draw the images
-                alien1[i].DrawEnemy(g);
+                alien[i].DrawEnemy(g);
 
             }
 
         }
+        
 
         private void FrmAlien_KeyDown(object sender, KeyEventArgs e)
         {
@@ -127,6 +134,7 @@ namespace code_asses2022JM
                 {
                     if (p.alienRec.IntersectsWith(m.missileRec))
                     {
+                        p.y = -20;// relocate planet to the top of the form
 
                         missiles.Remove(m);
                         break;
@@ -142,12 +150,12 @@ namespace code_asses2022JM
         {
             for (int i = 0; i < 7; i++)
             {
-                alien1[i].MoveEnemy();
+                alien[i].MoveEnemy();
 
-                if (player.playerRec.IntersectsWith(alien1[i].alienRec))
+                if (player.playerRec.IntersectsWith(alien[i].alienRec))
                 {
                     //reset planet[i] back to top of panel
-                    alien1[i].y = 30; // set  y value of planetRec
+                    alien[i].y = 30; // set  y value of planetRec
                     lives -= 1;// lose a life
                     LblLives.Text = lives.ToString();// display number of lives
                     CheckLives();
@@ -155,11 +163,11 @@ namespace code_asses2022JM
 
 
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (alien1[i].y >= PnlGame.Height)
+                if (alien[i].y >= PnlGame.Height)
                 {
                     score += 1;//update the score
                     LblScore.Text = score.ToString();// display score
-                    alien1[i].y = 10;
+                    alien[i].y = 10;
                 }
 
             }

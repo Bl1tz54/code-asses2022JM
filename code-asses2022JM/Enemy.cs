@@ -9,6 +9,7 @@ namespace code_asses2022JM
 {
     class Enemy
     {
+
         // declare fields to use in the class
         public int x, y, width, height;//variables for the rectangle
         public Image alienImage;//variable for the planet's image
@@ -36,11 +37,25 @@ namespace code_asses2022JM
             g.DrawImage(alienImage, alienRec);
         }
 
+        public void draw(Graphics g)
+        {
+            alienRec = new Rectangle(x, y, width, height);
+
+            g.DrawImage(alienImage, alienRec);
+        }
+
+
         public void MoveEnemy()
         {
             alienRec.Location = new Point(x, y);
         }
 
+        public void moveEnemy(Graphics g)
+        {
+            y += 5;
+            alienRec.Location = new Point(x, y);
+
+        }
 
     }
 }
